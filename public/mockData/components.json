@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "AMD Ryzen 5 5600",
+    "type": "CPU",
+    "price": 8500,
+    "retailers": [1, 2],
+    "compatibility": ["AM4"]
+  },
+  {
+    "id": 2,
+    "name": "Intel Core i5-12400F",
+    "type": "CPU",
+    "price": 9500,
+    "retailers": [3, 2],
+    "compatibility": ["LGA1700"]
+  },
+  {
+    "id": 3,
+    "name": "ASUS B550M-A",
+    "type": "Motherboard",
+    "price": 6500,
+    "retailers": [1, 3],
+    "compatibility": ["AM4"]
+  },
+  {
+    "id": 4,
+    "name": "Gigabyte B660M DS3H",
+    "type": "Motherboard",
+    "price": 7000,
+    "retailers": [2, 1],
+    "compatibility": ["LGA1700"]
+  }
+]

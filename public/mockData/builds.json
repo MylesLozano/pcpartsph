@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Budget AMD Build",
+    "parts": [1, 3]
+  },
+  {
+    "id": 2,
+    "name": "Budget Intel Build",
+    "parts": [2, 4]
+  }
+]
