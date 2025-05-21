@@ -4,31 +4,420 @@
     "name": "AMD Ryzen 5 5600",
     "type": "CPU",
     "price": 8500,
-    "retailers": [1, 2],
-    "compatibility": ["AM4"]
+    "retailerPrices": [
+      { "retailerId": 1, "price": 8500 },
+      { "retailerId": 2, "price": 8700 }
+    ],
+    "specs": {
+      "cores": 6,
+      "threads": 12,
+      "baseFrequency": "3.5 GHz",
+      "boostFrequency": "4.4 GHz",
+      "tdp": 65,
+      "cache": "35MB"
+    },
+    "image": "/mockData/images/ryzen-5-5600.webp",
+    "rating": 4.7,
+    "compatibility": ["AM4"],
+    "releaseDate": "2021-04-04"
   },
   {
     "id": 2,
     "name": "Intel Core i5-12400F",
     "type": "CPU",
     "price": 9500,
-    "retailers": [3, 2],
-    "compatibility": ["LGA1700"]
+    "retailerPrices": [
+      { "retailerId": 3, "price": 9500 },
+      { "retailerId": 2, "price": 9800 }
+    ],
+    "specs": {
+      "cores": 6,
+      "threads": 12,
+      "baseFrequency": "2.5 GHz",
+      "boostFrequency": "4.4 GHz",
+      "tdp": 65,
+      "cache": "18MB"
+    },
+    "image": "/mockData/images/intel-i5-12400f.webp",
+    "rating": 4.6,
+    "compatibility": ["LGA1700"],
+    "releaseDate": "2022-01-04"
   },
   {
     "id": 3,
     "name": "ASUS B550M-A",
     "type": "Motherboard",
     "price": 6500,
-    "retailers": [1, 3],
-    "compatibility": ["AM4"]
+    "retailerPrices": [
+      { "retailerId": 1, "price": 6500 },
+      { "retailerId": 3, "price": 6650 }
+    ],
+    "specs": {
+      "chipset": "AMD B550",
+      "formFactor": "Micro-ATX",
+      "memorySlots": 4,
+      "maxMemory": "128GB",
+      "pcieSlots": "1 x PCIe 4.0 x16, 1 x PCIe 3.0 x16"
+    },
+    "image": "/mockData/images/asus-b550m.webp",
+    "rating": 4.4,
+    "compatibility": ["AM4"],
+    "releaseDate": "2020-06-16"
   },
   {
     "id": 4,
     "name": "Gigabyte B660M DS3H",
     "type": "Motherboard",
     "price": 7000,
-    "retailers": [2, 1],
-    "compatibility": ["LGA1700"]
+    "retailerPrices": [
+      { "retailerId": 2, "price": 7000 },
+      { "retailerId": 1, "price": 7200 }
+    ],
+    "specs": {
+      "chipset": "Intel B660",
+      "formFactor": "Micro-ATX",
+      "memorySlots": 4,
+      "maxMemory": "128GB",
+      "pcieSlots": "1 x PCIe 4.0 x16, 1 x PCIe 3.0 x16"
+    },
+    "image": "/mockData/images/gigabyte-b660m.webp",
+    "rating": 4.3,
+    "compatibility": ["LGA1700"],
+    "releaseDate": "2022-01-04"
+  },
+  {
+    "id": 5,
+    "name": "Kingston FURY Beast 16GB (2x8GB) DDR4-3200",
+    "type": "Memory",
+    "price": 3200,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 3200 },
+      { "retailerId": 2, "price": 3300 },
+      { "retailerId": 3, "price": 3250 }
+    ],
+    "specs": {
+      "capacity": "16GB (2x8GB)",
+      "type": "DDR4",
+      "speed": "3200MHz",
+      "cas": "CL16",
+      "voltage": "1.35V"
+    },
+    "image": "/mockData/images/kingston-fury.webp",
+    "rating": 4.8,
+    "compatibility": ["DDR4"],
+    "releaseDate": "2021-07-19"
+  },
+  {
+    "id": 6,
+    "name": "Corsair Vengeance RGB Pro 32GB (2x16GB) DDR4-3600",
+    "type": "Memory",
+    "price": 7800,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 7800 },
+      { "retailerId": 3, "price": 7950 }
+    ],
+    "specs": {
+      "capacity": "32GB (2x16GB)",
+      "type": "DDR4",
+      "speed": "3600MHz",
+      "cas": "CL18",
+      "voltage": "1.35V"
+    },
+    "image": "/mockData/images/corsair-vengeance.webp",
+    "rating": 4.9,
+    "compatibility": ["DDR4"],
+    "releaseDate": "2020-05-13"
+  },
+  {
+    "id": 7,
+    "name": "Silicon Power A60 1TB M.2 NVMe SSD",
+    "type": "Storage",
+    "price": 2800,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 2800 },
+      { "retailerId": 3, "price": 2850 }
+    ],
+    "specs": {
+      "capacity": "1TB",
+      "interface": "M.2 PCIe Gen3 x4",
+      "readSpeed": "2200 MB/s",
+      "writeSpeed": "1600 MB/s",
+      "tbw": "600TB"
+    },
+    "image": "/mockData/images/silicon-power-a60.webp",
+    "rating": 4.5,
+    "compatibility": ["M.2 PCIe"],
+    "releaseDate": "2019-11-20"
+  },
+  {
+    "id": 8,
+    "name": "Samsung 970 EVO Plus 2TB M.2 NVMe SSD",
+    "type": "Storage",
+    "price": 9500,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 9500 },
+      { "retailerId": 3, "price": 9700 }
+    ],
+    "specs": {
+      "capacity": "2TB",
+      "interface": "M.2 PCIe Gen3 x4",
+      "readSpeed": "3500 MB/s",
+      "writeSpeed": "3300 MB/s",
+      "tbw": "1200TB"
+    },
+    "image": "/mockData/images/samsung-970-evo.webp",
+    "rating": 4.9,
+    "compatibility": ["M.2 PCIe"],
+    "releaseDate": "2019-01-22"
+  },
+  {
+    "id": 9,
+    "name": "MSI GeForce GTX 1660 Super Ventus XS OC",
+    "type": "GPU",
+    "price": 11500,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 11500 },
+      { "retailerId": 2, "price": 11700 }
+    ],
+    "specs": {
+      "memorySize": "6GB GDDR6",
+      "coreClock": "1530 MHz",
+      "boostClock": "1785 MHz",
+      "tdp": 125,
+      "length": "204mm"
+    },
+    "image": "/mockData/images/msi-gtx1660.webp",
+    "rating": 4.6,
+    "compatibility": ["PCIe"],
+    "releaseDate": "2019-10-29"
+  },
+  {
+    "id": 10,
+    "name": "ASUS TUF Gaming GeForce RTX 3060 OC",
+    "type": "GPU",
+    "price": 18500,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 18500 },
+      { "retailerId": 3, "price": 18800 }
+    ],
+    "specs": {
+      "memorySize": "12GB GDDR6",
+      "coreClock": "1320 MHz",
+      "boostClock": "1882 MHz",
+      "tdp": 170,
+      "length": "301mm"
+    },
+    "image": "/mockData/images/asus-rtx3060.webp",
+    "rating": 4.7,
+    "compatibility": ["PCIe"],
+    "releaseDate": "2021-02-25"
+  },
+  {
+    "id": 11,
+    "name": "Corsair CV550 550W 80+ Bronze",
+    "type": "PSU",
+    "price": 2500,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 2500 },
+      { "retailerId": 3, "price": 2650 }
+    ],
+    "specs": {
+      "wattage": "550W",
+      "efficiency": "80+ Bronze",
+      "modular": false,
+      "formFactor": "ATX"
+    },
+    "image": "/mockData/images/corsair-cv550.webp",
+    "rating": 4.3,
+    "compatibility": ["ATX"],
+    "releaseDate": "2020-01-14"
+  },
+  {
+    "id": 12,
+    "name": "Seasonic FOCUS GX-750 750W 80+ Gold",
+    "type": "PSU",
+    "price": 5900,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 5900 },
+      { "retailerId": 3, "price": 6050 }
+    ],
+    "specs": {
+      "wattage": "750W",
+      "efficiency": "80+ Gold",
+      "modular": true,
+      "formFactor": "ATX"
+    },
+    "image": "/mockData/images/seasonic-focus.webp",
+    "rating": 4.8,
+    "compatibility": ["ATX"],
+    "releaseDate": "2019-07-12"
+  },
+  {
+    "id": 13,
+    "name": "Deepcool MATREXX 40",
+    "type": "Case",
+    "price": 2200,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 2200 },
+      { "retailerId": 2, "price": 2300 }
+    ],
+    "specs": {
+      "formFactor": "MicroATX",
+      "dimensions": "210mm x 401mm x 378mm",
+      "driveBays": "2 x 3.5\", 4 x 2.5\"",
+      "maxGPULength": "330mm",
+      "maxCPUCoolerHeight": "160mm"
+    },
+    "image": "/mockData/images/deepcool-matrexx.webp",
+    "rating": 4.2,
+    "compatibility": ["MicroATX", "Mini-ITX"],
+    "releaseDate": "2020-08-17"
+  },
+  {
+    "id": 14,
+    "name": "Fractal Design Meshify C",
+    "type": "Case",
+    "price": 5500,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 5500 },
+      { "retailerId": 3, "price": 5650 }
+    ],
+    "specs": {
+      "formFactor": "ATX",
+      "dimensions": "217mm x 453mm x 409mm",
+      "driveBays": "2 x 3.5\", 3 x 2.5\"",
+      "maxGPULength": "315mm",
+      "maxCPUCoolerHeight": "172mm"
+    },
+    "image": "/mockData/images/fractal-meshify.webp",
+    "rating": 4.8,
+    "compatibility": ["ATX", "MicroATX", "Mini-ITX"],
+    "releaseDate": "2017-08-01"
+  },
+  {
+    "id": 15,
+    "name": "Deepcool GAMMAXX 400",
+    "type": "CPU Cooler",
+    "price": 1200,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 1200 },
+      { "retailerId": 3, "price": 1300 }
+    ],
+    "specs": {
+      "coolerType": "Air",
+      "fanSize": "120mm",
+      "height": "154.5mm",
+      "noise": "30 dBA"
+    },
+    "image": "/mockData/images/deepcool-gammaxx.webp",
+    "rating": 4.5,
+    "compatibility": ["AM4", "LGA1700", "LGA1200", "LGA1151"],
+    "releaseDate": "2019-03-15"
+  },
+  {
+    "id": 16,
+    "name": "NZXT Kraken X53",
+    "type": "CPU Cooler",
+    "price": 6500,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 6500 },
+      { "retailerId": 3, "price": 6700 }
+    ],
+    "specs": {
+      "coolerType": "AIO Liquid",
+      "radiatorSize": "240mm",
+      "fanSize": "120mm x 2",
+      "noise": "36 dBA"
+    },
+    "image": "/mockData/images/nzxt-kraken.webp",
+    "rating": 4.6,
+    "compatibility": ["AM4", "LGA1700", "LGA1200", "LGA1151"],
+    "releaseDate": "2020-02-04"
+  },
+  {
+    "id": 17,
+    "name": "AMD Ryzen 7 5800X",
+    "type": "CPU",
+    "price": 16500,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 16500 },
+      { "retailerId": 2, "price": 16800 }
+    ],
+    "specs": {
+      "cores": 8,
+      "threads": 16,
+      "baseFrequency": "3.8 GHz",
+      "boostFrequency": "4.7 GHz",
+      "tdp": 105,
+      "cache": "36MB"
+    },
+    "image": "/mockData/images/ryzen-7-5800x.webp",
+    "rating": 4.8,
+    "compatibility": ["AM4"],
+    "releaseDate": "2020-11-05"
+  },
+  {
+    "id": 18,
+    "name": "MSI MAG B550 TOMAHAWK",
+    "type": "Motherboard",
+    "price": 9800,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 9800 },
+      { "retailerId": 3, "price": 10000 }
+    ],
+    "specs": {
+      "chipset": "AMD B550",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemory": "128GB",
+      "pcieSlots": "1 x PCIe 4.0 x16, 1 x PCIe 3.0 x16, 2 x PCIe 3.0 x1"
+    },
+    "image": "/mockData/images/msi-tomahawk.webp",
+    "rating": 4.7,
+    "compatibility": ["AM4"],
+    "releaseDate": "2020-06-16"
+  },
+  {
+    "id": 19,
+    "name": "AMD Ryzen 9 5950X",
+    "type": "CPU",
+    "price": 29500,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 29500 },
+      { "retailerId": 3, "price": 29800 }
+    ],
+    "specs": {
+      "cores": 16,
+      "threads": 32,
+      "baseFrequency": "3.4 GHz",
+      "boostFrequency": "4.9 GHz",
+      "tdp": 105,
+      "cache": "72MB"
+    },
+    "image": "/mockData/images/ryzen-9-5950x.webp",
+    "rating": 4.9,
+    "compatibility": ["AM4"],
+    "releaseDate": "2020-11-05"
+  },
+  {
+    "id": 20,
+    "name": "ASUS ROG STRIX X570-E GAMING",
+    "type": "Motherboard",
+    "price": 18500,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 18500 },
+      { "retailerId": 3, "price": 18800 }
+    ],
+    "specs": {
+      "chipset": "AMD X570",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemory": "128GB",
+      "pcieSlots": "2 x PCIe 4.0 x16, 1 x PCIe 4.0 x1"
+    },
+    "image": "/mockData/images/asus-rog-strix.webp",
+    "rating": 4.8,
+    "compatibility": ["AM4"],
+    "releaseDate": "2019-07-07"
   }
 ]
