@@ -1,12 +1,73 @@
-# React + Vite
+# PCPartsPH - PC Builder Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application for PC building and price comparison in the Philippines, inspired by PCPartPicker.
 
-Currently, two official plugins are available:
+![PCPartsPH Build Guide](./public/mockData/images/screenshot.webp)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Home Page**: Showcases featured PC builds, trending components, and a shopping cart feature
+- **Build Guide**: Browse community-created PC builds with filterable categories by purpose, price range, and performance
+- **PC Builder**: Interactive component selector with real-time compatibility checking
+- **Price Comparison**: Compare component prices across different local retailers
+- **Responsive Design**: Fully responsive across mobile, tablet, and desktop
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+
+- `/src/pages` - Main application pages:
+  - `Home.jsx` - Landing page with featured builds and components
+  - `BuildGuide.jsx` - PC build showcases with filtering and detailed views
+  - `PartSelector.jsx` - Interactive PC building tool
+  - `Compare.jsx` - Component price comparison tool
+- `/src/components` - Reusable UI components:
+
+  - `partsList/` - Components for displaying PC parts
+  - `compatibility/` - Component compatibility checking
+  - `priceComparison/` - Price comparison tools
+
+- `/public/mockData/` - Mock data JSON files for development:
+  - `builds.json` - Pre-configured PC builds
+  - `components.json` - PC parts database
+  - `retailers.json` - Retailer information
+- `/scripts/` - Utility scripts:
+  - `convert-images.js` - WebP image conversion tool
+
+## Mock Data Structure
+
+The application uses structured mock data to simulate a production database:
+
+- **Components**: Detailed component specifications, pricing, compatibility info
+- **Builds**: Pre-configured PC builds with component lists, performance scores
+- **Retailers**: Local retailer information with pricing data
+
+## Image Handling
+
+The project uses WebP images for optimal performance:
+
+- Smaller file sizes (25-35% less than equivalent JPG/PNG)
+- Maintained image quality
+- Alpha transparency support
+- Use the included image conversion script to convert JPG/PNG to WebP
+
+## Technologies Used
+
+- **React** - UI framework
+- **React Router** - Navigation and routing
+- **TailwindCSS** - Styling and responsive design
+- **Vite** - Development server and build tool
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. To convert images: `node scripts/convert-images.js`
+
+## Future Improvements
+
+- User authentication system
+- Saved builds feature
+- Real-time price tracking
+- Integration with actual retailer APIs
+- User reviews and ratings
+- Build export/sharing capabilities
