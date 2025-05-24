@@ -20,6 +20,10 @@ export default function Compare() {
     setSelectedPartId(null);
   }, [filterType]);
 
+  useEffect(() => {
+    document.title = 'PCPartsPH | Compare';
+  }, []);
+
   return (
     <div className="p-8 max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-blue-700">Compare Prices</h2>

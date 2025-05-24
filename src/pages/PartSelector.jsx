@@ -18,6 +18,11 @@ export default function PartSelector() {
   const [selected, setSelected] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  // Set the document title for the Part Selector page
+  useEffect(() => {
+    document.title = 'PCPartsPH | Part Selector';
+  }, []);
+
   // Calculate total price when selection changes
   useEffect(() => {
     const sum = selected.reduce((total, part) => total + part.price, 0);

@@ -13,6 +13,10 @@ export default function BuildGuide() {
   });
 
   useEffect(() => {
+    document.title = 'PCPartsPH | Build Guide';
+  }, []);
+
+  useEffect(() => {
     fetch('/mockData/builds.json')
       .then(res => res.json())
       .then(data => {

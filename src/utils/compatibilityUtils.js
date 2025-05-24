@@ -38,7 +38,8 @@ export function calculatePowerConsumption(selectedParts) {
     basePower += 150; // Average GPU
   }
 
-  // Add additional components with rough estimates  const memory = selectedParts.filter((p) => p.type === "Memory").length;
+  // Add additional components with rough estimates
+  const memory = selectedParts.filter((p) => p.type === "Memory").length;
   basePower += memory * 10; // ~10W per memory module
 
   const storage = selectedParts.filter((p) => p.type === "Storage").length;

@@ -1,11 +1,16 @@
 // Simple Node.js script to convert JPG/PNG images to WebP
 // Requires: npm install sharp
 
+// eslint-disable-next-line no-undef
 const sharp = require("sharp");
+// eslint-disable-next-line no-undef
 const fs = require("fs");
+// eslint-disable-next-line no-undef
 const path = require("path");
 
+// eslint-disable-next-line no-undef
 const sourceDir = path.join(__dirname, "../public/mockData/images/source");
+// eslint-disable-next-line no-undef
 const targetDir = path.join(__dirname, "../public/mockData/images");
 
 // Create directories if they don't exist

@@ -1,4 +1,10 @@
+import { useEffect } from 'react';
+
 export default function About() {
+  useEffect(() => {
+    document.title = 'PCPartsPH | About';
+  }, []);
+
   return (
     <div className="p-8 max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-blue-700">About PCPartsPH</h2>

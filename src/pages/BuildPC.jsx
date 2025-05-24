@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { parts } from '../utils/partsData';
 
 export default function BuildPC() {
+  useEffect(() => {
+    document.title = 'PCPartsPH | Build PC';
+  }, []);
+
   return (
     <div className="p-8 max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-blue-700">Build Your PC</h2>
