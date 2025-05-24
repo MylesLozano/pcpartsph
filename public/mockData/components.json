@@ -328,11 +328,222 @@
       "radiatorSize": "240mm",
       "fanSize": "120mm x 2",
       "noise": "36 dBA"
-    },
-    "image": "/mockData/images/nzxt-kraken.webp",
+    },    "image": "/mockData/images/nzxt-kraken.webp",
     "rating": 4.6,
     "compatibility": ["AM4", "LGA1700", "LGA1200", "LGA1151"],
     "releaseDate": "2020-02-04"
+  },
+  {
+    "id": 21,
+    "name": "LG 27GL850-B UltraGear",
+    "type": "Monitor",
+    "price": 17900,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 17900 },
+      { "retailerId": 3, "price": 18200 }
+    ],
+    "specs": {
+      "size": "27 inch",
+      "resolution": "2560x1440 (WQHD)",
+      "refreshRate": "144Hz",
+      "panelType": "IPS",
+      "responseTime": "1ms",
+      "aspectRatio": "16:9"
+    },
+    "image": "/mockData/images/lg-ultragear.webp",
+    "rating": 4.7,
+    "compatibility": ["DisplayPort", "HDMI"],
+    "releaseDate": "2019-07-01"
+  },
+  {
+    "id": 22,
+    "name": "Samsung Odyssey G5",
+    "type": "Monitor",
+    "price": 15500,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 15500 },
+      { "retailerId": 1, "price": 15800 }
+    ],
+    "specs": {
+      "size": "32 inch",
+      "resolution": "2560x1440 (WQHD)",
+      "refreshRate": "144Hz",
+      "panelType": "VA",
+      "responseTime": "1ms",
+      "aspectRatio": "16:9"
+    },
+    "image": "/mockData/images/samsung-odyssey.webp",
+    "rating": 4.5,
+    "compatibility": ["DisplayPort", "HDMI"],
+    "releaseDate": "2020-05-12"
+  },
+  {
+    "id": 23,
+    "name": "Logitech G Pro X Mechanical Keyboard",
+    "type": "Keyboard",
+    "price": 6500,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 6500 },
+      { "retailerId": 3, "price": 6700 }
+    ],
+    "specs": {
+      "keyboardType": "Mechanical",
+      "switches": "GX Blue Clicky",
+      "layout": "Tenkeyless",
+      "backlight": "RGB",
+      "connection": "Wired USB"
+    },
+    "image": "/mockData/images/logitech-gpro-keyboard.webp",
+    "rating": 4.7,
+    "compatibility": ["Windows", "macOS"],
+    "releaseDate": "2019-08-06"
+  },
+  {
+    "id": 24,
+    "name": "Redragon K552 Mechanical Gaming Keyboard",
+    "type": "Keyboard",
+    "price": 2200,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 2200 },
+      { "retailerId": 3, "price": 2350 }
+    ],
+    "specs": {
+      "keyboardType": "Mechanical",
+      "switches": "Outemu Blue",
+      "layout": "Tenkeyless",
+      "backlight": "RGB",
+      "connection": "Wired USB"
+    },
+    "image": "/mockData/images/redragon-k552.webp",
+    "rating": 4.3,
+    "compatibility": ["Windows"],
+    "releaseDate": "2018-04-15"
+  },
+  {
+    "id": 25,
+    "name": "Logitech G Pro X Superlight",
+    "type": "Mouse",
+    "price": 6800,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 6800 },
+      { "retailerId": 2, "price": 7000 }
+    ],
+    "specs": {
+      "sensorType": "HERO 25K",
+      "dpi": "25600",
+      "buttons": 5,
+      "weight": "63g",
+      "connection": "Wireless"
+    },
+    "image": "/mockData/images/logitech-superlight.webp",
+    "rating": 4.8,
+    "compatibility": ["Windows", "macOS"],
+    "releaseDate": "2020-12-03"
+  },
+  {
+    "id": 26,
+    "name": "Glorious Model O",
+    "type": "Mouse",
+    "price": 3200,
+    "retailerPrices": [
+      { "retailerId": 3, "price": 3200 },
+      { "retailerId": 1, "price": 3300 }
+    ],
+    "specs": {
+      "sensorType": "Pixart PMW-3360",
+      "dpi": "12000",
+      "buttons": 6,
+      "weight": "67g",
+      "connection": "Wired"
+    },
+    "image": "/mockData/images/glorious-model-o.webp",
+    "rating": 4.6,
+    "compatibility": ["Windows"],
+    "releaseDate": "2019-05-18"
+  },
+  {
+    "id": 27,
+    "name": "Arctic P12 PWM PST Value Pack (5-Pack)",
+    "type": "Fans",
+    "price": 1800,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 1800 },
+      { "retailerId": 3, "price": 1900 }
+    ],
+    "specs": {
+      "fanSize": "120mm",
+      "rpm": "200-1800 RPM",
+      "airflow": "56.3 CFM",
+      "noise": "0.3 Sone",
+      "connector": "PWM"
+    },
+    "image": "/mockData/images/arctic-p12.webp",
+    "rating": 4.6,
+    "compatibility": ["120mm"],
+    "releaseDate": "2018-06-22"
+  },
+  {
+    "id": 28,
+    "name": "Noctua NF-A14 PWM",
+    "type": "Fans",
+    "price": 1500,
+    "retailerPrices": [
+      { "retailerId": 1, "price": 1500 },
+      { "retailerId": 2, "price": 1600 }
+    ],
+    "specs": {
+      "fanSize": "140mm",
+      "rpm": "300-1500 RPM",
+      "airflow": "82.5 CFM",
+      "noise": "24.6 dBA",
+      "connector": "PWM"
+    },
+    "image": "/mockData/images/noctua-nf-a14.webp",
+    "rating": 4.9,
+    "compatibility": ["140mm"],
+    "releaseDate": "2016-04-11"
+  },
+  {
+    "id": 29,
+    "name": "HyperX Cloud II",
+    "type": "Audio",
+    "price": 4500,
+    "retailerPrices": [
+      { "retailerId": 3, "price": 4500 },
+      { "retailerId": 1, "price": 4700 }
+    ],
+    "specs": {
+      "type": "Over-Ear",
+      "connection": "USB/3.5mm",
+      "microphone": "Detachable",
+      "surroundSound": "7.1 Virtual Surround",
+      "color": "Red/Black"
+    },
+    "image": "/mockData/images/hyperx-cloud-ii.webp",
+    "rating": 4.7,
+    "compatibility": ["Windows", "PlayStation", "Xbox"],
+    "releaseDate": "2015-02-09"
+  },
+  {
+    "id": 30,
+    "name": "SteelSeries Arctis 7",
+    "type": "Audio",
+    "price": 7800,
+    "retailerPrices": [
+      { "retailerId": 2, "price": 7800 },
+      { "retailerId": 3, "price": 8000 }
+    ],
+    "specs": {
+      "type": "Over-Ear",
+      "connection": "Wireless",
+      "microphone": "Retractable",
+      "surroundSound": "DTS Headphone:X v2.0",
+      "batteryLife": "24 hours"
+    },
+    "image": "/mockData/images/steelseries-arctis-7.webp",
+    "rating": 4.8,
+    "compatibility": ["Windows", "PlayStation"],
+    "releaseDate": "2019-08-28"
   },
   {
     "id": 17,

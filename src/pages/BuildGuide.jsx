@@ -1,9 +1,11 @@
 // src/pages/BuildGuide.jsx
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export default function BuildGuide() {
   const [builds, setBuilds] = useState([]);
   const [selectedBuild, setSelectedBuild] = useState(null);
+  const [searchParams] = useSearchParams();
   const [filter, setFilter] = useState({
     purpose: '',
     priceRange: '',
@@ -13,8 +15,19 @@ export default function BuildGuide() {
   useEffect(() => {
     fetch('/mockData/builds.json')
       .then(res => res.json())
-      .then(setBuilds);
-  }, []);
+      .then(data => {
+        setBuilds(data);
+        // Check if build ID is in URL params
+        const buildId = searchParams.get('build');
+        if (buildId) {
+          const buildIdNum = parseInt(buildId);
+          const build = data.find(b => b.id === buildIdNum);
+          if (build) {
+            setSelectedBuild(buildIdNum);
+          }
+        }
+      });
+  }, [searchParams]);
 
   // Filter and sort builds
   const filteredBuilds = builds.filter(build => {

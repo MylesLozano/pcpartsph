@@ -8,6 +8,9 @@ export default function CompatibilityChecker({ selectedParts }) {
   const gpu = selectedParts.find(p => p.type === 'GPU');
   const psu = selectedParts.find(p => p.type === 'PSU');
   const cpuCooler = selectedParts.find(p => p.type === 'CPU Cooler');
+  const monitor = selectedParts.find(p => p.type === 'Monitor');
+  const fans = selectedParts.find(p => p.type === 'Fans');
+  const pcCase = selectedParts.find(p => p.type === 'Case');
   
   // CPU + Motherboard compatibility
   let cpuMoboCompatible = null;
@@ -38,13 +41,26 @@ export default function CompatibilityChecker({ selectedParts }) {
   if (cpu && cpuCooler) {
     coolerCompatible = cpuCooler.compatibility.some(socket => cpu.compatibility.includes(socket));
   }
+    // Monitor + GPU compatibility (simplified)
+  let monitorCompatible = null;
+  if (monitor && gpu) {
+    monitorCompatible = true; // Simplified for demo - could check specific ports
+  }
+  
+  // Fans + Case compatibility check
+  let fansCompatible = null;
+  if (fans && pcCase) {
+    fansCompatible = fans.compatibility.includes('120mm'); // Most cases accept 120mm fans
+  }
   
   // Count compatibility checks and determine overall status
   const checks = [
     { name: 'CPU + Motherboard', status: cpuMoboCompatible },
     { name: 'Memory + Motherboard', status: memoryCompatible },
     { name: 'Power Requirements', status: powerSufficient },
-    { name: 'CPU Cooler + CPU', status: coolerCompatible }
+    { name: 'CPU Cooler + CPU', status: coolerCompatible },
+    { name: 'Monitor + GPU', status: monitorCompatible },
+    { name: 'Fans + Case', status: fansCompatible }
   ].filter(check => check.status !== null);
   
   const passedChecks = checks.filter(check => check.status === true).length;

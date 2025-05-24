@@ -52,12 +52,11 @@ export default function Home() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Build Your Dream PC</h1>
               <p className="text-blue-100 text-lg mb-6">
                 Find the perfect components, compare prices, and check compatibility all in one place.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/part-selector" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors">
+              </p>              <div className="flex flex-wrap gap-4">
+                <Link to="/parts" className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors">
                   Build Your PC
                 </Link>
-                <Link to="/build-guide" className="px-6 py-3 bg-white hover:bg-gray-100 text-blue-800 font-medium rounded-md transition-colors">
+                <Link to="/guides" className="px-6 py-3 bg-white hover:bg-gray-100 text-blue-800 font-medium rounded-md transition-colors">
                   View Build Guides
                 </Link>
               </div>
@@ -95,12 +94,11 @@ export default function Home() {
       <div className="max-w-6xl mx-auto px-8 py-10">
         {/* Featured PC Builds */}
         <section className="mb-16">
-          <div className="flex justify-between items-end mb-6">
-            <div>
+          <div className="flex justify-between items-end mb-6">            <div>
               <h2 className="text-3xl font-bold text-blue-800">Featured PC Builds</h2>
               <p className="text-gray-600 mt-1">Pre-designed builds for different needs and budgets</p>
             </div>
-            <Link to="/build-guide" className="text-blue-600 hover:text-blue-800 font-medium">
+            <Link to="/guides" className="text-blue-600 hover:text-blue-800 font-medium">
               View All Builds →
             </Link>
           </div>
@@ -111,9 +109,8 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {featuredBuilds.map(build => (
-                <Link 
-                  to={`/build-guide?build=${build.id}`} 
+              {featuredBuilds.map(build => (                <Link 
+                  to={`/guides?build=${build.id}`} 
                   key={build.id}
                   className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                 >

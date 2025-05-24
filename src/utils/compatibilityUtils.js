@@ -38,8 +38,7 @@ export function calculatePowerConsumption(selectedParts) {
     basePower += 150; // Average GPU
   }
 
-  // Add additional components with rough estimates
-  const memory = selectedParts.filter((p) => p.type === "Memory").length;
+  // Add additional components with rough estimates  const memory = selectedParts.filter((p) => p.type === "Memory").length;
   basePower += memory * 10; // ~10W per memory module
 
   const storage = selectedParts.filter((p) => p.type === "Storage").length;
@@ -47,6 +46,17 @@ export function calculatePowerConsumption(selectedParts) {
 
   const cooler = selectedParts.filter((p) => p.type === "CPU Cooler").length;
   basePower += cooler * 10; // ~10W per CPU cooler
+
+  // Add power for new component types
+  const fans = selectedParts.filter((p) => p.type === "Fans").length;
+  basePower += fans * 5; // ~5W per fan set
+
+  const peripherals = selectedParts.filter(
+    (p) => p.type === "Keyboard" || p.type === "Mouse" || p.type === "Audio"
+  ).length;
+  basePower += peripherals * 5; // ~5W per peripheral for USB power
+
+  // Monitors have separate power supplies, so not included in PSU calculation
 
   // Add 20% safety margin
   return Math.ceil(basePower * 1.2);
@@ -89,6 +99,11 @@ export function getCompatibilityChecks(selectedParts) {
   const psu = selectedParts.find((p) => p.type === "PSU");
   const cpuCooler = selectedParts.find((p) => p.type === "CPU Cooler");
   const pcCase = selectedParts.find((p) => p.type === "Case");
+  const monitor = selectedParts.find((p) => p.type === "Monitor");
+  const fans = selectedParts.find((p) => p.type === "Fans");
+  const keyboard = selectedParts.find((p) => p.type === "Keyboard");
+  const mouse = selectedParts.find((p) => p.type === "Mouse");
+  const audio = selectedParts.find((p) => p.type === "Audio");
 
   // CPU + Motherboard compatibility
   if (cpu && mobo) {
@@ -144,7 +159,6 @@ export function getCompatibilityChecks(selectedParts) {
         : `${cpuCooler.name} may not be compatible with ${cpu.name}`,
     });
   }
-
   // GPU Length compatibility with case (simplified)
   if (gpu && pcCase && gpu.specs?.length && pcCase.specs?.maxGPULength) {
     const gpuLength = parseInt(gpu.specs.length);
@@ -157,6 +171,74 @@ export function getCompatibilityChecks(selectedParts) {
         ? `${gpu.name} fits in the ${pcCase.name} case`
         : `${gpu.name} (${gpu.specs.length}) may be too long for ${pcCase.name} case (max ${pcCase.specs.maxGPULength})`,
     });
+  }
+
+  // Monitor + GPU compatibility check
+  if (monitor && gpu) {
+    // Check if monitor and GPU share a compatible port (DisplayPort or HDMI usually)
+    const commonPorts = monitor.compatibility?.filter(
+      (port) =>
+        gpu.compatibility?.includes(port) ||
+        port === "DisplayPort" ||
+        port === "HDMI"
+    );
+
+    const compatible = commonPorts?.length > 0;
+    checks.push({
+      name: "Monitor + GPU",
+      status: compatible,
+      message: compatible
+        ? `${monitor.name} is compatible with ${gpu.name}`
+        : `${monitor.name} may not have compatible ports with ${gpu.name}`,
+    });
+  }
+
+  // Case + Fans compatibility check
+  if (fans && pcCase) {
+    // Check if the fan size is compatible with the case
+    // Simplified check - in reality would check fan mount points
+    const compatible = fans.compatibility?.includes("120mm"); // Most cases accept 120mm fans
+    checks.push({
+      name: "Fans + Case",
+      status: compatible,
+      message: compatible
+        ? `${fans.name} can be installed in the ${pcCase.name} case`
+        : `${fans.name} may not fit properly in the ${pcCase.name} case`,
+    });
+  }
+
+  // Basic OS compatibility check for peripherals
+  if (keyboard && cpu) {
+    const compatible = keyboard.compatibility?.includes("Windows");
+    if (!compatible) {
+      checks.push({
+        name: "Keyboard Compatibility",
+        status: compatible,
+        message: `${keyboard.name} may have limited compatibility with your system`,
+      });
+    }
+  }
+
+  if (mouse && cpu) {
+    const compatible = mouse.compatibility?.includes("Windows");
+    if (!compatible) {
+      checks.push({
+        name: "Mouse Compatibility",
+        status: compatible,
+        message: `${mouse.name} may have limited compatibility with your system`,
+      });
+    }
+  }
+
+  if (audio && cpu) {
+    const compatible = audio.compatibility?.includes("Windows");
+    if (!compatible) {
+      checks.push({
+        name: "Audio Compatibility",
+        status: compatible,
+        message: `${audio.name} may have limited compatibility with your system`,
+      });
+    }
   }
 
   return checks;

@@ -4,7 +4,7 @@ import { parts } from '../utils/partsData';
 import CompatibilityChecker from '../components/compatibility/CompatibilityChecker';
 
 // Define the order of component selection for the build process
-const typeOrder = ['CPU', 'Motherboard', 'Memory', 'GPU', 'Storage', 'PSU', 'Case', 'CPU Cooler'];
+const typeOrder = ['CPU', 'Motherboard', 'Memory', 'GPU', 'Storage', 'PSU', 'Case', 'CPU Cooler', 'Fans', 'Monitor', 'Keyboard', 'Mouse', 'Audio'];
 
 // Get unique part types and sort them according to the defined order
 const partTypes = [...new Set(parts.map(p => p.type))]
@@ -31,7 +31,6 @@ export default function PartSelector() {
       return id ? [...filtered, part] : filtered;
     });
   };
-
   // Function to check if a part is compatible with the current selection
   const isCompatible = (part) => {
     // Skip compatibility check for empty selection
@@ -50,6 +49,29 @@ export default function PartSelector() {
       if (selectedCpu) {
         return part.compatibility.some(socket => selectedCpu.compatibility.includes(socket));
       }
+    }
+
+    // Check Monitor + GPU compatibility (Display ports)
+    if (part.type === 'Monitor') {
+      const selectedGpu = selected.find(p => p.type === 'GPU');
+      if (selectedGpu && selectedGpu.compatibility && part.compatibility) {
+        // Simplified check - in a real app would check specific ports
+        return true; // Assume compatibility for demo
+      }
+    }
+
+    // Check Case + Fans compatibility (fan size)
+    if (part.type === 'Fans') {
+      const selectedCase = selected.find(p => p.type === 'Case');
+      if (selectedCase) {
+        // Simplified compatibility check - assume all cases fit 120mm fans
+        return part.compatibility.includes('120mm');
+      }
+    }
+
+    // For peripherals, we'll assume compatibility
+    if (['Keyboard', 'Mouse', 'Audio'].includes(part.type)) {
+      return true;
     }
 
     return true;
