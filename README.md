@@ -4,11 +4,11 @@ A full-stack application for comparing PC part prices from different retailers i
 
 ## Features
 
-- 🔍 Compare prices from different retailers
-- 🖥️ Build your PC by selecting compatible components
-- 📊 View price history and trends
-- 📱 Responsive design for desktop and mobile
-- 🔒 Built with PERN Stack (PostgreSQL, Express, React, Node.js)
+- Compare prices from different retailers
+- Build your PC by selecting compatible components
+- View price history and trends
+- Responsive design for desktop and mobile
+- Built with PERN Stack (PostgreSQL, Express, React, Node.js)
 
 ## Getting Started
 
